@@ -14,9 +14,9 @@
   <script src="./src/note-list-view.js"></script>
   <script src="./src/note-controller.js"></script>
   <script>
-    window.addEventListener("hashchange", notifyUsNOW);
-    function notifyUsNOW() {
-       noteController = new NoteController();
+    window.addEventListener("hashchange", displayNote);
+    function displayNote() {
+       noteController = new NoteController()
        noteController.createNote("I love coding at Makers Academy");
        noteController.createNote("I love coding in Javascript and Ruby");
        noteController.updateHTML();
@@ -24,5 +24,11 @@
     };
 </script>
   <script src="./src/index.js"></script>
+
+  <form method="post">
+    <textarea id="text">
+    </textarea>
+      <input type="submit" value="submit">
+  </form>
 </body>
 </html>

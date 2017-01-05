@@ -13,6 +13,15 @@
   <script src="./src/index.js"></script>
   <script src="./spec/note-list-controller-spec.js"></script>
   <script src="./spec/single-note-view-spec.js"></script>
+  <script>
+    window.addEventListener("hashchange", displayNote);
+    function displayNote() {
+       noteController = new NoteController()
+       noteController.createNote("A sailor went to sea to see what he could see.");
+       noteController.updateHTML();
+       noteController.showSingleNoteForCurrentPage();
+    };
+</script>
 </head>
 <body></body>
 </html>

@@ -20,12 +20,10 @@
 
   NoteController.prototype.showSingleNoteForCurrentPage = function() {
     this.showSingleNote(this.getNoteFromURL());
-    console.log("HELOO")
   };
 
   NoteController.prototype.getNoteFromURL = function() {
     var noteID = window.location.hash.split("#")[1];
-    console.log(noteID)
 
     function findNoteByID(element) {
       return element.id.toString() === noteID;
@@ -39,7 +37,6 @@
     var app = document.getElementById("app");
     app.innerHTML = note;
   };
-
   exports.NoteController = NoteController;
 
 })(this);

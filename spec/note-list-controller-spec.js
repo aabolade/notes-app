@@ -27,8 +27,9 @@ assert.isTrue(noteController instanceof NoteController)
 
   noteController.createNote("A sailor went to sea to see what he could see.")
   noteController.updateHTML()
-
-  window.location.href = "file:///Users/lekeabolade/Documents/MakersAcademy/notesApp/specrunner.html#1"
+  window.location.hash = ""
+  window.location.hash = "#0"
   var element = document.getElementById("app")
-  assert.isTrue(element.innerHTML === "A sailor went to sea to see what he could see.")
+  console.log(element);
+  assert.isTrue(element === "<div id=\"app\">A sailor went to sea to see what he could see.</div>")
 })();
