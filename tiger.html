@@ -6,7 +6,11 @@
   </head>
 
   <body>
-    <a href="#tiger">Tiger</a>
+    <a href="#tiger">Tiger</a> |
+    <a href="#lion">Lion</a> |
+    <a href="#cheetah">Cheetah</a> |
+    <a href="#leopard">Leopard</a>
+
     <div id="animal"></div>
 
     <script>
@@ -17,6 +21,7 @@
       };
 
       function showAnimalForCurrentPage() {
+        console.log(window)
         showAnimal(getAnimalFromUrl(window.location));
       };
 

@@ -17,7 +17,18 @@ assert.isTrue(noteController instanceof NoteController)
   noteController.noteListView = noteListViewDouble;
   noteController.updateHTML()
 
-  element = document.getElementById("app")
+  var element = document.getElementById("app")
   assert.isTrue(element.innerHTML === noteListViewDouble.returnHTML())
 
+})();
+
+(function loadContentForNewPage() {
+  var noteController = new NoteController()
+
+  noteController.createNote("A sailor went to sea to see what he could see.")
+  noteController.updateHTML()
+
+  window.location.href = "file:///Users/lekeabolade/Documents/MakersAcademy/notesApp/specrunner.html#1"
+  var element = document.getElementById("app")
+  assert.isTrue(element.innerHTML === "A sailor went to sea to see what he could see.")
 })();

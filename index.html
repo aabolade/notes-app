@@ -8,9 +8,21 @@
   <div id='app'>
     hello
   </div>
+
   <script src="./src/note-model.js"></script>
   <script src="./src/note-list.js"></script>
   <script src="./src/note-list-view.js"></script>
   <script src="./src/note-controller.js"></script>
+  <script>
+    window.addEventListener("hashchange", notifyUsNOW);
+    function notifyUsNOW() {
+       noteController = new NoteController();
+       noteController.createNote("I love coding at Makers Academy");
+       noteController.createNote("I love coding in Javascript and Ruby");
+       noteController.updateHTML();
+       noteController.showSingleNoteForCurrentPage();
+    };
+</script>
+  <script src="./src/index.js"></script>
 </body>
 </html>
