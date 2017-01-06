@@ -23,6 +23,31 @@ assert.isTrue(noteController instanceof NoteController);
 
 })();
 
+(function displaysEmptyNoteList() {
+  var noteController = new NoteController();
+  noteController.updateHTML()
+
+  var element = document.getElementById("app")
+  assert.isTrue(element.innerHTML === "<ul></ul>")
+
+})();
+
+(function displaysHTMLFromTextField() {
+
+  var textHTML = document.getElementById("text");
+  textHTML.value = "Our own note";
+
+  document.getElementById("myform").addEventListener("submit", function (event) {
+    event.preventDefault();
+    var noteController = new NoteController();
+    noteController.createNote(textHTML.value);
+    noteController.updateHTML();
+  })
+  element = document.getElementById("app");
+  document.getElementById("click").click();
+  assert.isTrue(element.textContent === "Our own note");
+})();
+
 // (function loadContentForNewPage() {
 //   var newNoteController = new NoteController();
 //

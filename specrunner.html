@@ -4,6 +4,12 @@
 
   <div id="app">Hello</div>
 
+  <form id="myform" method="post" action="/notes">
+    <textarea id="text">
+    </textarea>
+    <input id="click" type="submit" value="submit">
+  </form>
+
   <script src="./src/note-model.js"></script>
   <script src="./src/note-list.js"></script>
   <script src="./src/note-list-view.js"></script>
@@ -30,5 +36,16 @@
 </script>
 </head>
 <body>
+
+
+  <script>
+
+  function preventDefault(evt) {
+    evt.preventDefault()
+    console.log("event")
+  };
+  window.addEventListener("submit",preventDefault);
+
+  </script>
 </body>
 </html>
